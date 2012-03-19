@@ -1,0 +1,190 @@
+# -*- coding: utf-8 -*-
+
+from five import grok
+from zope import schema
+from plone.directives import form, dexterity
+
+from zope.component import getMultiAdapter
+from plone.namedfile.field import NamedBlobFile, NamedBlobImage
+from plone.z3cform.textlines.textlines import TextLinesFieldWidget
+
+from z3c.relationfield.schema import RelationList, RelationChoice
+from plone.formwidget.contenttree import ObjPathSourceBinder
+from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.schema.interfaces import IVocabularyFactory
+
+from z3c.formwidget.query.interfaces import IQuerySource
+from zope.component import queryUtility
+
+from plone.formwidget.masterselect import (
+    _,
+    MasterSelectField,
+    MasterSelectBoolField,
+)
+
+from plone.app.textfield.interfaces import ITransformer
+from plone.indexer import indexer
+
+from oaxaca.newcontent import ContentMessageFactory as _
+from oaxaca.newcontent.config import OAXACA
+
+
+def getSlaveVocab(municipio_id):
+    print municipio_id
+    municipios_list = sorted(OAXACA.keys())
+    municipio_nombre = municipios_list[int(municipio_id)]
+    localidades = []
+    if municipio_nombre in OAXACA:
+        localidades = sorted(OAXACA[municipio_nombre])
+    return SimpleVocabulary(
+        [SimpleTerm(value=localidades.index(l), title=l) for l in localidades]
+    )
+
+
+class IReunion(form.Schema):
+
+    """A reunion.
+    """
+
+    fecha = schema.Date(
+            title=_(u"Fecha"),
+            description=_(u"Seleccione fecha en que se realizó la reunión"),
+            required=False
+        )
+
+    municipio = MasterSelectField(
+            title=_(u"Municipio"),
+            description=_(u"Seleccione el municipio donde ocurrió el evento"),
+            required=False,
+            vocabulary="oaxaca.newcontent.municipios",
+            slave_fields=(
+                {'name': 'localidad',
+                 'action': 'vocabulary',
+                 'vocab_method': getSlaveVocab,
+                 'control_param': 'municipio_id',
+                },
+            )
+        )
+
+    localidad = schema.Choice(
+        title=_(u"Localidad"),
+        description=_(u"Localidad"),
+        values=[u'',],
+        required=False,
+    )
+
+    form.widget(pMunicipales = TextLinesFieldWidget)
+    pMunicipales = schema.List(
+            title=_(u"Presidentes municipales"),
+            description=_(u"Escriba nombres usando una línea por cada uno."),
+            default = [],
+            value_type = schema.TextLine(),
+            required = False,
+        )
+
+    form.widget(aAgrarias = TextLinesFieldWidget)
+    aAgrarias = schema.List(
+            title=_(u"Autoridades agrarias"),
+            description=_(u"Escriba nombres usando una línea por cada uno."),
+            default = [],
+            value_type = schema.TextLine(),
+            required = False,
+        )
+
+    form.widget(oProductivas = TextLinesFieldWidget)
+    oProductivas = schema.List(
+            title=_(u"Organizaciones productivas"),
+            description=_(u"Escriba nombres usando una línea por cada uno."),
+            default = [],
+            value_type = schema.TextLine(),
+            required = False,
+        )
+
+    form.widget(iFederales = TextLinesFieldWidget)
+    iFederales = schema.List(
+            title=_(u"Instituciones federales"),
+            description=_(u"Escriba nombres usando una línea por cada uno."),
+            default = [],
+            value_type = schema.TextLine(),
+            required = False,
+        )
+
+    form.widget(iEstatales = TextLinesFieldWidget)
+    iEstatales = schema.List(
+            title=_(u"Instituciones estatales"),
+            description=_(u"Escriba nombres usando una línea por cada uno."),
+            default = [],
+            value_type = schema.TextLine(),
+            required = False,
+        )
+
+    form.widget(oAsistentes = TextLinesFieldWidget)
+    oAsistentes = schema.List(
+            title=_(u"Otros asistentes"),
+            description=_(u"Escriba nombres usando una línea por cada uno."),
+            default = [],
+            value_type = schema.TextLine(),
+            required = False,
+        )
+
+    totalAsistentes = schema.Int(
+            title=_(u'Cantidad total de asistentes'),
+            required=False,
+            description=_(u'Cantidad'),
+        )
+
+    quien = schema.Choice(
+            title=_(u"CDM"),
+            description=_(u"Seleccione el CDM que realizó la reunión"),
+            required=False,
+            values=(
+                u'CDM 1',
+                u'CDM 2',
+                u'CDM 3',
+                u'CDM 4',
+                u'CDM 5',
+                u'CDM 6',
+                u'CDM 7',
+                u'CDM 8',
+                u'CDM 9',
+                u'CDM 10',
+                u'CDM 11',
+                u'CDM 12',
+                u'CDM 13',
+                u'CDM 14',
+                u'CDM 15',
+                u'CDM 16',
+                u'CDM 17',
+                u'CDM 18',
+                u'CDM 19',
+                u'CDM 20',
+                u'CDM 21',
+                u'CDM 22',
+                u'CDM 23',
+                u'CDM 24',
+                u'CDM 25',)
+        )
+
+    imagen1 = NamedBlobImage(
+            title=_(u"Imagen 1"),
+            description=_(u"Subir imagen de la reunión"),
+            required=False
+        )
+
+    imagen2 = NamedBlobImage(
+            title=_(u"Imagen 2"),
+            description=_(u"Subir imagen de la reunión"),
+            required=False
+        )
+
+    anexo1 = NamedBlobFile(
+            title=_(u"Asistencia"),
+            description=_(u"Subir archivo de texto con lista de asistencia"),
+            required=False
+        )
+
+    anexo2 = NamedBlobFile(
+            title=_(u"Acta"),
+            description=_(u"Subir archivo de texto con acta de la reunión"),
+            required=False
+        )

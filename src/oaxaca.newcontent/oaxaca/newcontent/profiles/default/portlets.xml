@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<portlets>
+ <portletmanager name="plone.dashboard1"
+    type="plone.app.portlets.interfaces.IDashboard"/>
+ <portletmanager name="plone.dashboard2"
+    type="plone.app.portlets.interfaces.IDashboard"/>
+ <portletmanager name="plone.dashboard3"
+    type="plone.app.portlets.interfaces.IDashboard"/>
+ <portletmanager name="plone.dashboard4"
+    type="plone.app.portlets.interfaces.IDashboard"/>
+ <portletmanager name="plone.leftcolumn"
+    type="plone.app.portlets.interfaces.ILeftColumn"/>
+ <portletmanager name="plone.rightcolumn"
+    type="plone.app.portlets.interfaces.IRightColumn"/>
+ <portlet title="Login" addview="portlets.Login"
+    description="A portlet which can render a log-in box">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+ </portlet>
+ <portlet title="Collection portlet"
+    addview="plone.portlet.collection.Collection"
+    description="A portlet which displays the results of a collection query"/>
+ <portlet title="Review list" addview="portlets.Review"
+    description="A portlet which can render a listing on the review queue.">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+  <for interface="plone.app.portlets.interfaces.IDashboard"/>
+ </portlet>
+ <portlet title="RSS Feed" addview="portlets.rss"
+    description="A portlet which can receive and render an RSS feed.">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+  <for interface="plone.app.portlets.interfaces.IDashboard"/>
+ </portlet>
+ <portlet title="Classic portlet" addview="portlets.Classic"
+    description="A portlet which can render a classic template-based portlet">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+  <for interface="plone.app.portlets.interfaces.IDashboard"/>
+ </portlet>
+ <portlet title="Calendar portlet" addview="portlets.Calendar"
+    description="A portlet which can render a calendar.">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+  <for interface="plone.app.portlets.interfaces.IDashboard"/>
+ </portlet>
+ <portlet title="Search" addview="portlets.Search"
+    description="A portlet which shows a search box.">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+  <for interface="plone.app.portlets.interfaces.IDashboard"/>
+ </portlet>
+ <portlet title="Recent items" addview="portlets.Recent"
+    description="A portlet which can render a listing of recently changed items.">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+  <for interface="plone.app.portlets.interfaces.IDashboard"/>
+ </portlet>
+ <portlet title="News" addview="portlets.News"
+    description="A portlet which can render a listing of recent news">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+  <for interface="plone.app.portlets.interfaces.IDashboard"/>
+ </portlet>
+ <portlet title="Static text portlet" addview="plone.portlet.static.Static"
+    description="A portlet which can display static HTML text."/>
+ <portlet title="Navigation" addview="portlets.Navigation"
+    description="A portlet which can render a navigation tree">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+ </portlet>
+ <portlet title="Events" addview="portlets.Events"
+    description="A portlet which can render a listing of recent events">
+  <for interface="plone.app.portlets.interfaces.IColumn"/>
+  <for interface="plone.app.portlets.interfaces.IDashboard"/>
+ </portlet>
+ <assignment name="recent-items" category="user" key="fichas"
+    manager="plone.dashboard2" type="portlets.Recent" visible="True">
+  <property name="count">5</property>
+ </assignment>
+ <assignment name="recent-items" category="user" key="jcamaney"
+    manager="plone.dashboard2" type="portlets.Recent" visible="True">
+  <property name="count">5</property>
+ </assignment>
+ <assignment name="recent-items" category="user" key="jcamorras"
+    manager="plone.dashboard2" type="portlets.Recent" visible="True">
+  <property name="count">5</property>
+ </assignment>
+ <assignment name="recent-items" category="user" key="juan"
+    manager="plone.dashboard2" type="portlets.Recent" visible="True">
+  <property name="count">5</property>
+ </assignment>
+ <assignment name="news" category="user" key="fichas"
+    manager="plone.dashboard1" type="portlets.News" visible="True">
+  <property name="count">5</property>
+  <property name="state">
+   <element>published</element>
+  </property>
+ </assignment>
+ <assignment name="events" category="user" key="fichas"
+    manager="plone.dashboard1" type="portlets.Events" visible="True">
+  <property name="count">5</property>
+  <property name="state">
+   <element>published</element>
+  </property>
+ </assignment>
+ <assignment name="news" category="user" key="jcamaney"
+    manager="plone.dashboard1" type="portlets.News" visible="True">
+  <property name="count">5</property>
+  <property name="state">
+   <element>published</element>
+  </property>
+ </assignment>
+ <assignment name="events" category="user" key="jcamaney"
+    manager="plone.dashboard1" type="portlets.Events" visible="True">
+  <property name="count">5</property>
+  <property name="state">
+   <element>published</element>
+  </property>
+ </assignment>
+ <assignment name="news" category="user" key="jcamorras"
+    manager="plone.dashboard1" type="portlets.News" visible="True">
+  <property name="count">5</property>
+  <property name="state">
+   <element>published</element>
+  </property>
+ </assignment>
+ <assignment name="events" category="user" key="jcamorras"
+    manager="plone.dashboard1" type="portlets.Events" visible="True">
+  <property name="count">5</property>
+  <property name="state">
+   <element>published</element>
+  </property>
+ </assignment>
+ <assignment name="news" category="user" key="juan" manager="plone.dashboard1"
+    type="portlets.News" visible="True">
+  <property name="count">5</property>
+  <property name="state">
+   <element>published</element>
+  </property>
+ </assignment>
+ <assignment name="events" category="user" key="juan"
+    manager="plone.dashboard1" type="portlets.Events" visible="True">
+  <property name="count">5</property>
+  <property name="state">
+   <element>published</element>
+  </property>
+ </assignment>
+ <assignment name="review-list" category="user" key="fichas"
+    manager="plone.dashboard4" type="portlets.Review" visible="True"/>
+ <assignment name="review-list" category="user" key="jcamaney"
+    manager="plone.dashboard4" type="portlets.Review" visible="True"/>
+ <assignment name="review-list" category="user" key="jcamorras"
+    manager="plone.dashboard4" type="portlets.Review" visible="True"/>
+ <assignment name="review-list" category="user" key="juan"
+    manager="plone.dashboard4" type="portlets.Review" visible="True"/>
+ <assignment name="calendar" category="context" key="/"
+    manager="plone.leftcolumn" type="portlets.Calendar" visible="True"/>
+ <assignment name="poderes-estatales" category="context" key="/"
+    manager="plone.leftcolumn" type="plone.portlet.static.Static"
+    visible="True">
+  <property
+     name="text">&lt;p&gt;&lt;a class="external-link" href="http://www.oaxaca.gob.mx"&gt;Poder Ejecutivo&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.congresooaxaca.gob.mx/lxi/cong_oaxaca.html"&gt;Poder Legislativo&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.tribunaloax.gob.mx"&gt;Poder Judicial&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.congresooaxaca.gob.mx/lxi/l_estatal.html"&gt;Legislación estatal&lt;/a&gt;&lt;/p&gt;</property>
+  <property name="more_url"/>
+  <property name="omit_border">False</property>
+  <property name="header">Poderes estatales</property>
+  <property name="footer"/>
+ </assignment>
+ <assignment name="publicaciones-electronicas" category="context" key="/"
+    manager="plone.leftcolumn" type="plone.portlet.static.Static"
+    visible="True">
+  <property
+     name="text">&lt;p&gt;&lt;a class="external-link" href="http://www.adiariooaxaca.com"&gt;A Diario&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://adnsureste.info/index.php"&gt;ADN Sureste&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.diariodespertar.com.mx"&gt;Despertar&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.escondido-dd.com"&gt;Despertar de la Costa&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.diarioacontecer.com.mx"&gt;Diario Acontecer&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://diarioaxaca.com/"&gt;Diario Oaxaca&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.enfoquediario.com"&gt;Enfoque Diario&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://e-oaxaca.com/"&gt;e-Consulta&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.e-oaxaca.mx"&gt;e-Oaxaca&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://fpnoticias.com/"&gt;Foro Politico&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.imparcialenlinea.com"&gt;El Imparcial&lt;/a&gt;&lt;a class="external-link" href="http://www.noticiasnet.mx"&gt;&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.libertad-oaxaca.info/inicio.html"&gt;Libertad Oaxaca&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.diariomarca.com.mx/"&gt;Marca&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.noticiasnet.mx"&gt;Noticias&lt;/a&gt;&lt;a class="external-link" href="http://www.oaxacain.com"&gt;&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://nssoaxaca.com/"&gt;NSS Oaxaca&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.oaxacain.com"&gt;Oaxacaín&lt;/a&gt;&lt;a class="external-link" href="http://www.diariopuntocritico.com"&gt;&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.pagina3.mx/home.html"&gt;Pagina 3&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.elpinerodelacuenca.com.mx/"&gt;El Pinero&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.youtube.com/puntotvla"&gt;Punto&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.diariopuntocritico.com"&gt;Punto Critico&lt;/a&gt;&lt;a class="external-link" href="http://www.quadratinoaxaca.com.mx"&gt;&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.quadratinoaxaca.com.mx"&gt;Quadratín&lt;/a&gt;&lt;a class="external-link" href="http://www.redcapital.com.mx"&gt;&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.realidadoaxaca.com/noticias/"&gt;Realidad&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.elsoldelistmo.com.mx"&gt;El Sol del Istmo&lt;/a&gt;&lt;a class="external-link" href="http://www.elsoldelacosta.com.mx"&gt;&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.elsoldelacosta.com.mx"&gt;El Sol de la Costa&lt;/a&gt;&lt;a class="external-link" href="http://www.elsurdiario.com.mx"&gt;&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.elsurdiario.com.mx"&gt;El Sur&lt;/a&gt;&lt;a class="external-link" href="http://www.tiempoenlinea.com.mx"&gt;&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.tiempoenlinea.com.mx"&gt;Tiempo&lt;/a&gt;&lt;a class="external-link" href="http://www.eltuxtepecano.com"&gt;&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.eltuxtepecano.com"&gt;El Tuxtepecano&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;Voz del Sur&lt;/p&gt;</property>
+  <property name="more_url"/>
+  <property name="omit_border">False</property>
+  <property name="header">Publicaciones electrónicas</property>
+  <property name="footer"/>
+ </assignment>
+ <assignment name="otros-enlaces" category="context" key="/"
+    manager="plone.leftcolumn" type="plone.portlet.static.Static"
+    visible="True">
+  <property
+     name="text">&lt;p&gt;&lt;a class="external-link" href="http://www.iee-oax.org.mx"&gt;Instituto Estatal Electoral y de Participación Ciudadana de Oaxaca&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.arzobispadodeoaxaca.org/curia.html"&gt;Arquidiócesis de Antequera Oaxaca&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.sedesol.gob.mx"&gt;Sedesol&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.inegi.org.mx"&gt;INEGI&lt;/a&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;a class="external-link" href="http://www.rae.es/rae.html"&gt;Diccionario de la Real Academia Española&lt;/a&gt;&lt;/p&gt;</property>
+  <property name="more_url"/>
+  <property name="omit_border">False</property>
+  <property name="header">Otros enlaces</property>
+  <property name="footer"/>
+ </assignment>
+ <blacklist category="user" location="/" manager="plone.dashboard2"
+    status="acquire"/>
+ <blacklist category="group" location="/" manager="plone.dashboard2"
+    status="acquire"/>
+ <blacklist category="content_type" location="/" manager="plone.dashboard2"
+    status="acquire"/>
+ <blacklist category="context" location="/" manager="plone.dashboard2"
+    status="acquire"/>
+ <blacklist category="user" location="/" manager="plone.dashboard3"
+    status="acquire"/>
+ <blacklist category="group" location="/" manager="plone.dashboard3"
+    status="acquire"/>
+ <blacklist category="content_type" location="/" manager="plone.dashboard3"
+    status="acquire"/>
+ <blacklist category="context" location="/" manager="plone.dashboard3"
+    status="acquire"/>
+ <blacklist category="user" location="/" manager="plone.dashboard1"
+    status="acquire"/>
+ <blacklist category="group" location="/" manager="plone.dashboard1"
+    status="acquire"/>
+ <blacklist category="content_type" location="/" manager="plone.dashboard1"
+    status="acquire"/>
+ <blacklist category="context" location="/" manager="plone.dashboard1"
+    status="acquire"/>
+ <blacklist category="user" location="/" manager="plone.dashboard4"
+    status="acquire"/>
+ <blacklist category="group" location="/" manager="plone.dashboard4"
+    status="acquire"/>
+ <blacklist category="content_type" location="/" manager="plone.dashboard4"
+    status="acquire"/>
+ <blacklist category="context" location="/" manager="plone.dashboard4"
+    status="acquire"/>
+ <blacklist category="user" location="/" manager="plone.leftcolumn"
+    status="acquire"/>
+ <blacklist category="group" location="/" manager="plone.leftcolumn"
+    status="acquire"/>
+ <blacklist category="content_type" location="/" manager="plone.leftcolumn"
+    status="acquire"/>
+ <blacklist category="context" location="/" manager="plone.leftcolumn"
+    status="acquire"/>
+ <blacklist category="user" location="/" manager="plone.rightcolumn"
+    status="acquire"/>
+ <blacklist category="group" location="/" manager="plone.rightcolumn"
+    status="acquire"/>
+ <blacklist category="content_type" location="/" manager="plone.rightcolumn"
+    status="acquire"/>
+ <blacklist category="context" location="/" manager="plone.rightcolumn"
+    status="acquire"/>
+</portlets>

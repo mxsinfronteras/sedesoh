@@ -1,0 +1,18 @@
+<object name="portal_types">
+    
+ <!-- This file registers new types with portal_types. The types are
+      then configured with the corresponding files in types/*.xml.
+   -->
+ 
+ <object name="oaxaca.Ficha" meta_type="Dexterity FTI"/>
+ <object name="oaxaca.Nota" meta_type="Dexterity FTI"/>
+ <object name="oaxaca.Reporte" meta_type="Dexterity FTI"/>
+ <object name="oaxaca.Acta" meta_type="Dexterity FTI"/>
+ <object name="oaxaca.FichaFolder" meta_type="Dexterity FTI"/>
+ <object name="oaxaca.NotaFolder" meta_type="Dexterity FTI"/>
+ <object name="oaxaca.ReporteFolder" meta_type="Dexterity FTI"/>
+ <object name="oaxaca.ActaFolder" meta_type="Dexterity FTI"/>
+ <object name="oaxaca.AgendaFolder" meta_type="Dexterity FTI"/>
+ <object name="oaxaca.ComunicadoFolder" meta_type="Dexterity FTI"/>
+
+</object>

@@ -1,0 +1,9 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+    <utility
+        component=".vocabularies.municipios_vocab"
+        name="oaxaca.newcontent.municipios"
+        />
+
+</configure>

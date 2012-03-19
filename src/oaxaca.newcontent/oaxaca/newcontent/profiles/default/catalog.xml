@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<object name="portal_catalog">
+    <index name="fecha" meta_type="DateIndex">
+        <indexed_attr value="fecha"/>
+    </index>
+    <index name="actores" meta_type="ZCTextIndex">
+        <indexed_attr value="actores"/>
+        <extra name="index_type" value="Okapi BM25 Rank"/>
+        <extra name="lexicon_id" value="plone_lexicon"/>
+    </index>
+    <index name="demandas" meta_type="ZCTextIndex">
+        <indexed_attr value="demandas"/>
+        <extra name="index_type" value="Okapi BM25 Rank"/>
+        <extra name="lexicon_id" value="plone_lexicon"/>
+    </index>
+    <index name="municipio" meta_type="KeywordIndex">
+        <indexed_attr value="municipio"/>
+    </index>
+    <index name="localidad" meta_type="ZCTextIndex">
+        <indexed_attr value="localidad"/>
+        <extra name="index_type" value="Okapi BM25 Rank"/>
+        <extra name="lexicon_id" value="plone_lexicon"/>
+    </index>
+    <index name="fuente" meta_type="ZCTextIndex">
+        <indexed_attr value="fuente"/>
+        <extra name="index_type" value="Okapi BM25 Rank"/>
+        <extra name="lexicon_id" value="plone_lexicon"/>
+    </index>
+    <index name="totalAsistentes" meta_type="ZCTextIndex">
+        <indexed_attr value="totalAsistentes"/>
+        <extra name="index_type" value="Okapi BM25 Rank"/>
+        <extra name="lexicon_id" value="plone_lexicon"/>
+    </index>
+    <index name="SearchableText" meta_type="ZCTextIndex">
+        <indexed_attr value="SearchableText"/>
+        <extra name="index_type" value="Okapi BM25 Rank"/>
+        <extra name="lexicon_id" value="plone_lexicon"/>
+    </index>
+    <column value="fecha"/>
+    <column value="actores"/>
+    <column value="demandas"/>
+    <column value="municipio"/>
+    <column value="localidad"/>
+    <column value="fuente"/>
+    <column value="totalAsistentes"/>
+    <column value="SearchableText"/>
+</object>

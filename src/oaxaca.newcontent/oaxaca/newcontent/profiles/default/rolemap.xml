@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions>
+    <permission name="Oaxaca: Add Ficha" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+        <role name="Owner" />
+        <role name="Contributor" />
+    </permission>
+    <permission name="Oaxaca: Add Nota" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+        <role name="Owner" />
+        <role name="Contributor" />
+    </permission>
+    <permission name="Oaxaca: Add Reporte" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+        <role name="Owner" />
+        <role name="Contributor" />
+    </permission>
+    <permission name="Oaxaca: Add Acta" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+        <role name="Owner" />
+        <role name="Contributor" />
+    </permission>
+    <permission name="Oaxaca: Add Ficha Folder" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+    </permission>
+    <permission name="Oaxaca: Add Nota Folder" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+    </permission>
+    <permission name="Oaxaca: Add Reporte Folder" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+    </permission>
+    <permission name="Oaxaca: Add Acta Folder" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+    </permission>
+    <permission name="Oaxaca: Add Agenda Folder" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+    </permission>
+    <permission name="Oaxaca: Add Comunicado Folder" acquire="False">
+        <role name="Manager" />
+        <role name="Site Administrator" />
+    </permission>
+  </permissions>
+</rolemap>

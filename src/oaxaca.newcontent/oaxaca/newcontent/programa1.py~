@@ -1,0 +1,99 @@
+# -*- coding: utf-8 -*-
+
+from five import grok
+from zope import schema
+from plone.directives import form, dexterity
+
+from zope.component import getMultiAdapter
+
+from z3c.relationfield.schema import RelationList, RelationChoice
+from plone.formwidget.contenttree import ObjPathSourceBinder
+from zope.schema.vocabulary import SimpleVocabulary
+from zope.schema.interfaces import IVocabularyFactory
+
+from z3c.formwidget.query.interfaces import IQuerySource
+from zope.component import queryUtility
+
+from plone.formwidget.masterselect import (
+    _,
+    MasterSelectField,
+    MasterSelectBoolField,
+)
+
+from oaxaca.newcontent import ContentMessageFactory as _
+from oaxaca.newcontent.config import OAXACA
+
+
+def getSlaveVocab(master):
+    results = []
+    if master in OAXACA:
+        results = sorted(OAXACA[master])
+    return SimpleVocabulary.fromValues(results) 
+
+
+class IPrograma1(form.Schema):
+
+    """An programa1.
+    """
+
+    fechaReporte = schema.Date(
+            title=_(u"Fecha"),
+            description=_(u"Fecha en que presenta este reporte"),
+            required=False
+        )
+
+    municipio = MasterSelectField(
+            title=_(u"Municipio"),
+            description=_(u"Seleccione el municipio donde se entregaron las unidades"),
+            required=False,
+            vocabulary="oaxaca.newcontent.municipios",
+            slave_fields=(
+                {'name': 'localidad',
+                 'action': 'vocabulary',
+                 'vocab_method': getSlaveVocab,
+                 'control_param': 'master',
+                },
+            )
+        )
+
+    localidad = schema.Choice(
+        title=_(u"Localidad"),
+        description=_(u"Localidad"),
+        values=[u'',],
+        required=False,
+    )
+
+    unidad = schema.Choice(
+            title=_(u"Unidad"),
+            description=_(u"Seleccione la unidad sobre la que se reporta"),
+            values=(
+                u'útiles escolares',
+                u'uniformes escolares',
+                u'tarjetas',),
+            required=False
+        )
+
+    uniAsignadas = schema.Int(
+            title=_(u"Unidades asignadas"),
+            required=False
+        )
+
+    uniEntregadas = schema.Int(
+            title=_(u"Unidades entregadas"),
+            required=False
+        )
+
+    beneficiarios = schema.Int(
+            title=_(u"Cantidad de personas beneficiadas"),
+            required=False
+        )
+
+    uniPorEntregar = schema.Int(
+            title=_(u"Unidades por entregar"),
+            required=False
+        )
+
+    quien = schema.TextLine(
+            title=_(u"Nombre de la persona que informa"),
+            required=False
+        )

@@ -1,0 +1,58 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="oaxaca.newcontent">
+
+    <!-- Define new permissions -->
+    
+    <permission
+        id="oaxaca.AddFicha"
+        title="Oaxaca: Add Ficha"
+        />
+
+    <permission
+        id="oaxaca.AddNota"
+        title="Oaxaca: Add Nota"
+        />
+  
+    <permission
+        id="oaxaca.AddReporte"
+        title="Oaxaca: Add Reporte"
+        />
+
+    <permission
+        id="oaxaca.AddActa"
+        title="Oaxaca: Add Acta"
+        />
+
+    <permission
+        id="oaxaca.AddFichaFolder"
+        title="Oaxaca: Add Ficha Folder"
+        />
+
+    <permission
+        id="oaxaca.AddNotaFolder"
+        title="Oaxaca: Add Nota Folder"
+        />
+
+    <permission
+        id="oaxaca.AddReporteFolder"
+        title="Oaxaca: Add Reporte Folder"
+        />
+
+    <permission
+        id="oaxaca.AddActaFolder"
+        title="Oaxaca: Add Acta Folder"
+        />
+
+    <permission
+        id="oaxaca.AddAgendaFolder"
+        title="Oaxaca: Add Agenda Folder"
+        />
+
+    <permission
+        id="oaxaca.AddComunicadoFolder"
+        title="Oaxaca: Add Comunicado Folder"
+        />
+
+</configure>

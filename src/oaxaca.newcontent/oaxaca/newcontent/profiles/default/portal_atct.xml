@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<atcttool xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <topic_indexes>
+  <index name="fecha" description="Fecha"
+     enabled="True" friendlyName="Fecha"
+     i18n:attributes="description;friendlyName">
+   <criteria>ATBooleanCriterion</criteria>
+   <criteria>ATCurrentAuthorCriterion</criteria>
+   <criteria>ATDateRangeCriterion</criteria>
+   <criteria>ATFriendlyDateCriteria</criteria>
+   <criteria>ATListCriterion</criteria>
+   <criteria>ATPortalTypeCriterion</criteria>
+   <criteria>ATReferenceCriterion</criteria>
+   <criteria>ATSelectionCriterion</criteria>
+   <criteria>ATSimpleIntCriterion</criteria>
+   <criteria>ATSimpleStringCriterion</criteria>
+  </index>
+  <index name="actores" description="Actores"
+     enabled="True" friendlyName="Actores"
+     i18n:attributes="description;friendlyName">
+   <criteria>ATBooleanCriterion</criteria>
+   <criteria>ATCurrentAuthorCriterion</criteria>
+   <criteria>ATDateRangeCriterion</criteria>
+   <criteria>ATFriendlyDateCriteria</criteria>
+   <criteria>ATListCriterion</criteria>
+   <criteria>ATPortalTypeCriterion</criteria>
+   <criteria>ATReferenceCriterion</criteria>
+   <criteria>ATSelectionCriterion</criteria>
+   <criteria>ATSimpleIntCriterion</criteria>
+   <criteria>ATSimpleStringCriterion</criteria>
+  </index>
+  <index name="demandas" description="Demandas"
+     enabled="True" friendlyName="Demandas"
+     i18n:attributes="description;friendlyName">
+   <criteria>ATBooleanCriterion</criteria>
+   <criteria>ATCurrentAuthorCriterion</criteria>
+   <criteria>ATDateRangeCriterion</criteria>
+   <criteria>ATFriendlyDateCriteria</criteria>
+   <criteria>ATListCriterion</criteria>
+   <criteria>ATPortalTypeCriterion</criteria>
+   <criteria>ATReferenceCriterion</criteria>
+   <criteria>ATSelectionCriterion</criteria>
+   <criteria>ATSimpleIntCriterion</criteria>
+   <criteria>ATSimpleStringCriterion</criteria>
+  </index>
+  <index name="municipio" description="Municipio"
+     enabled="True" friendlyName="Municipio"
+     i18n:attributes="description;friendlyName">
+   <criteria>ATBooleanCriterion</criteria>
+   <criteria>ATCurrentAuthorCriterion</criteria>
+   <criteria>ATDateRangeCriterion</criteria>
+   <criteria>ATFriendlyDateCriteria</criteria>
+   <criteria>ATListCriterion</criteria>
+   <criteria>ATPortalTypeCriterion</criteria>
+   <criteria>ATReferenceCriterion</criteria>
+   <criteria>ATSelectionCriterion</criteria>
+   <criteria>ATSimpleIntCriterion</criteria>
+   <criteria>ATSimpleStringCriterion</criteria>>
+  </index>
+  <index name="localidad" description="Localidad"
+     enabled="True" friendlyName="Localidad"
+     i18n:attributes="description;friendlyName">
+   <criteria>ATBooleanCriterion</criteria>
+   <criteria>ATCurrentAuthorCriterion</criteria>
+   <criteria>ATDateRangeCriterion</criteria>
+   <criteria>ATFriendlyDateCriteria</criteria>
+   <criteria>ATListCriterion</criteria>
+   <criteria>ATPortalTypeCriterion</criteria>
+   <criteria>ATReferenceCriterion</criteria>
+   <criteria>ATSelectionCriterion</criteria>
+   <criteria>ATSimpleIntCriterion</criteria>
+   <criteria>ATSimpleStringCriterion</criteria>
+  </index>
+  <index name="fuente" description="Fuente"
+     enabled="True" friendlyName="Fuente"
+     i18n:attributes="description;friendlyName">
+   <criteria>ATBooleanCriterion</criteria>
+   <criteria>ATCurrentAuthorCriterion</criteria>
+   <criteria>ATDateRangeCriterion</criteria>
+   <criteria>ATFriendlyDateCriteria</criteria>
+   <criteria>ATListCriterion</criteria>
+   <criteria>ATPortalTypeCriterion</criteria>
+   <criteria>ATReferenceCriterion</criteria>
+   <criteria>ATSelectionCriterion</criteria>
+   <criteria>ATSimpleIntCriterion</criteria>
+   <criteria>ATSimpleStringCriterion</criteria>
+  </index>
+  <index name="totalAsistentes" description="Asistencia"
+     enabled="True" friendlyName="Asistencia"
+     i18n:attributes="description;friendlyName">
+   <criteria>ATBooleanCriterion</criteria>
+   <criteria>ATCurrentAuthorCriterion</criteria>
+   <criteria>ATDateRangeCriterion</criteria>
+   <criteria>ATFriendlyDateCriteria</criteria>
+   <criteria>ATListCriterion</criteria>
+   <criteria>ATPortalTypeCriterion</criteria>
+   <criteria>ATReferenceCriterion</criteria>
+   <criteria>ATSelectionCriterion</criteria>
+   <criteria>ATSimpleIntCriterion</criteria>
+   <criteria>ATSimpleStringCriterion</criteria>
+  </index>
+ </topic_indexes>
+ <topic_metadata>
+  <metadata name="fecha"
+     description="Fecha" enabled="True"
+     friendlyName="Fecha"
+     i18n:attributes="description;friendlyName" />
+  <metadata name="actores"
+     description="Actores" enabled="True"
+     friendlyName="Actores"
+     i18n:attributes="description;friendlyName" />
+  <metadata name="demandas"
+     description="Demandas" enabled="True"
+     friendlyName="Demandas"
+     i18n:attributes="description;friendlyName" />
+  <metadata name="municipio"
+     description="Municipio" enabled="True"
+     friendlyName="Municipio"
+     i18n:attributes="description;friendlyName" />
+  <metadata name="localidad"
+     description="Localidad" enabled="True"
+     friendlyName="Localidad"
+     i18n:attributes="description;friendlyName" />
+  <metadata name="fuente"
+     description="Fuente" enabled="True"
+     friendlyName="Fuente"
+     i18n:attributes="description;friendlyName" />
+  <metadata name="totalAsistentes"
+     description="Asistencia" enabled="True"
+     friendlyName="Asistencia"
+     i18n:attributes="description;friendlyName" />
+ </topic_metadata>
+</atcttool>

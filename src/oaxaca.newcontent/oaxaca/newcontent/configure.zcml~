@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:faceted="http://namespaces.zope.org/faceted"
+    i18n_domain="oaxaca.newcontent">
+
+  <!-- Include dependencies' configuration -->
+  <includeDependencies package="." />
+  
+  <include file="vocabularies.zcml" />
+
+  <!-- Include files -->
+  <include file="permissions.zcml" />
+
+  <!-- Register components configured using Python directives -->
+  <grok:grok package="." />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="oaxaca.newcontent"
+      directory="profiles/default"
+      description="Installs the oaxaca.newcontent package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <!-- -*- extra stuff goes here -*- -->
+
+  <!-- A faceted view with no python logic -->
+  <faceted:view
+    name="faceted-table-view"
+    template="faceted-table.pt"
+    title="Faceted table view"
+    permission="zope2.View"
+  />
+  
+</configure>

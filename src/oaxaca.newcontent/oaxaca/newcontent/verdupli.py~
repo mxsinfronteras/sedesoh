@@ -1,0 +1,11 @@
+from config import OAXACA
+
+results = []
+
+for muni in OAXACA:
+    locs = OAXACA[muni]
+    if len(locs) is not len(set(locs)):
+        results.append(muni)
+
+print res for res in sorted(results)
+print u"# de resultados: %s" % len(results)

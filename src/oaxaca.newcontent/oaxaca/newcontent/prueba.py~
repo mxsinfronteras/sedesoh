@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+
+from plone.directives import form
+from five import grok
+from zope import schema
+from plone.directives import form, dexterity
+from zope.schema.vocabulary import SimpleVocabulary
+from oaxaca.newcontent import ContentMessageFactory as _
+
+myVocabulary = SimpleVocabulary.fromItems((
+    (u"Fóo", "id_foó"),
+    (u"Baróo", "id_baroó")))
+
+class IPrueba(form.Schema):
+
+    tipoMenu = schema.Choice(
+            title=_(u"Tipo de evento"),
+            description=_(u"Marque la opción que aplique o "
+                           "seleccione otro si ninguna aplica"),
+            vocabulary=myVocabulary,
+            required=False,
+        )
