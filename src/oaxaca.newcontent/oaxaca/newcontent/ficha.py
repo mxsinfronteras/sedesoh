@@ -48,6 +48,7 @@ class IFicha(form.Schema, IImageScaleTraversable):
             title=_(u"Tipo de evento"),
             description=_(u"Marque la opción que aplique o "
                            "seleccione otro si ninguna aplica."),
+            required=False,
             value_type=schema.Choice(
             values=(
                 (u'Manifestacion en lugar publico'),

@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<zodb-users>
+ <user user_id="Administrador" login_name="Administrador" password_hash="{SSHA}soDoByWswuwKSEaTc5/H9YCeqF5jpEVobJG/"/>
+ <user user_id="Pedrito" login_name="Pedrito" password_hash="{SSHA}sShQ8cCBVd3V8F72LadX2gsjdKqHpB6oJxGh"/>
+</zodb-users>

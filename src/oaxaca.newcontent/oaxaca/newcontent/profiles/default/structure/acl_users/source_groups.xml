@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<zodb-groups title="">
+ <group group_id="ActaGrupo" title="" description="">
+ </group>
+ <group group_id="Administrators" title="Administrators" description="">
+ </group>
+ <group group_id="AgendaGrupo" title="" description="">
+ </group>
+ <group group_id="BusquedaGrupo" title="" description="">
+ </group>
+ <group group_id="ComunicadoGrupo" title="" description="">
+ </group>
+ <group group_id="ContribuyenteGrupo" title="" description="">
+ </group>
+ <group group_id="EditorGrupo" title="" description="">
+ </group>
+ <group group_id="FichaGrupo" title="" description="">
+  <principal principal_id="Juanito"/>
+ </group>
+ <group group_id="LectorGrupo" title="" description="">
+ </group>
+ <group group_id="NotaGrupo" title="" description="">
+ </group>
+ <group group_id="ReporteGrupo" title="" description="">
+ </group>
+ <group group_id="Reviewers" title="Reviewers" description="">
+ </group>
+ <group group_id="Site Administrators" title="Site Administrators" description="">
+  <principal principal_id="Administrador"/>
+ </group>
+</zodb-groups>
